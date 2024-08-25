@@ -133,7 +133,19 @@ export const dataReview = async () => {
   try {
     const query = await prisma.review.findMany({
       include: {
-        alternatif: true,
+        user: {
+          select: {
+            username: true,
+            role: true,
+          },
+        },
+        alternatif: {
+          select: {
+            name: true,
+            harga: true,
+            merk: true,
+          },
+        },
       },
     })
     return query

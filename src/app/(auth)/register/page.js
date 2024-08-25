@@ -37,7 +37,7 @@ const Register = () => {
             />
           </div>
           <div className="flex gap-8">
-            <div className='flex flex-col gap-4'>
+            <div className="flex flex-col gap-4">
               <div className="flex flex-col">
                 <label htmlFor="HM" className="text-start">
                   Harga terhadap Merk
@@ -47,18 +47,30 @@ const Register = () => {
                   id="HM"
                   className="mt-2 w-full rounded-lg border-2 border-gray-400 p-2"
                 >
-                  <option value={1}>Equal Importance</option>
-                  <option value={3}>Moderate Importance</option>
-                  <option value={5}>Strong Importance</option>
-                  <option value={7}>Very Strong Importance</option>
-                  <option value={9}>Extreme Importance</option>
+                  <option value={1 / 5}>1/5 Strong Unimportance</option>
+                  <option value={1 / 4}>
+                    1/4 Strong to Moderate Unimportance
+                  </option>
+                  <option value={1 / 3}>1/3 Moderate Unimportance</option>
+                  <option value={1 / 2}>
+                    1/2 Moderate to Low Unimportance
+                  </option>
+                  <option value={1}>1 Equal Importance</option>
+                  <option value={2}>2 Equal to Moderate Importance</option>
+                  <option value={3}>3 Moderate Importance</option>
+                  <option value={4}>4 Moderate to Strong Importance </option>
+                  <option value={5}>5 Strong Importance</option>
                 </select>
               </div>
               <div className="flex flex-col">
                 <label htmlFor="HS" className="text-start">
                   Harga terhadap Shade
                 </label>
-                <select className="w-full rounded-lg border-2 border-gray-400 p-2 mt-2" name="HS" id="HS">
+                <select
+                  className="mt-2 w-full rounded-lg border-2 border-gray-400 p-2"
+                  name="HS"
+                  id="HS"
+                >
                   <option value={1}>Equal Importance</option>
                   <option value={3}>Moderate Importance</option>
                   <option value={5}>Strong Importance</option>
@@ -70,7 +82,11 @@ const Register = () => {
                 <label htmlFor="HK" className="text-start">
                   Harga terhadap Ketahanan
                 </label>
-                <select className="w-full rounded-lg border-2 border-gray-400 p-2 mt-2" name="HK" id="HK">
+                <select
+                  className="mt-2 w-full rounded-lg border-2 border-gray-400 p-2"
+                  name="HK"
+                  id="HK"
+                >
                   <option value={1}>Equal Importance</option>
                   <option value={3}>Moderate Importance</option>
                   <option value={5}>Strong Importance</option>
@@ -82,7 +98,11 @@ const Register = () => {
                 <label htmlFor="HC" className="text-start">
                   Harga terhadap Coverage
                 </label>
-                <select className="w-full rounded-lg border-2 border-gray-400 p-2 mt-2" name="HC" id="HC">
+                <select
+                  className="mt-2 w-full rounded-lg border-2 border-gray-400 p-2"
+                  name="HC"
+                  id="HC"
+                >
                   <option value={1}>Equal Importance</option>
                   <option value={3}>Moderate Importance</option>
                   <option value={5}>Strong Importance</option>
@@ -94,7 +114,11 @@ const Register = () => {
                 <label htmlFor="HJ" className="text-start">
                   Harga terhadap Jenis Kulit
                 </label>
-                <select className="w-full rounded-lg border-2 border-gray-400 p-2 mt-2" name="HJ" id="HJ">
+                <select
+                  className="mt-2 w-full rounded-lg border-2 border-gray-400 p-2"
+                  name="HJ"
+                  id="HJ"
+                >
                   <option value={1}>Equal Importance</option>
                   <option value={3}>Moderate Importance</option>
                   <option value={5}>Strong Importance</option>
@@ -106,7 +130,11 @@ const Register = () => {
                 <label htmlFor="MS" className="text-start">
                   Merk terhadap Shade
                 </label>
-                <select className="w-full rounded-lg border-2 border-gray-400 p-2 mt-2" name="MS" id="MS">
+                <select
+                  className="mt-2 w-full rounded-lg border-2 border-gray-400 p-2"
+                  name="MS"
+                  id="MS"
+                >
                   <option value={1}>Equal Importance</option>
                   <option value={3}>Moderate Importance</option>
                   <option value={5}>Strong Importance</option>
@@ -118,7 +146,11 @@ const Register = () => {
                 <label htmlFor="MK" className="text-start">
                   Merk terhadap Ketahanan
                 </label>
-                <select className="w-full rounded-lg border-2 border-gray-400 p-2 mt-2" name="MK" id="MK">
+                <select
+                  className="mt-2 w-full rounded-lg border-2 border-gray-400 p-2"
+                  name="MK"
+                  id="MK"
+                >
                   <option value={1}>Equal Importance</option>
                   <option value={3}>Moderate Importance</option>
                   <option value={5}>Strong Importance</option>
@@ -130,7 +162,11 @@ const Register = () => {
                 <label htmlFor="MC" className="text-start">
                   Merk terhadap Coverage
                 </label>
-                <select className="w-full rounded-lg border-2 border-gray-400 p-2 mt-2" name="MC" id="MC">
+                <select
+                  className="mt-2 w-full rounded-lg border-2 border-gray-400 p-2"
+                  name="MC"
+                  id="MC"
+                >
                   <option value={1}>Equal Importance</option>
                   <option value={3}>Moderate Importance</option>
                   <option value={5}>Strong Importance</option>
@@ -139,12 +175,16 @@ const Register = () => {
                 </select>
               </div>
             </div>
-            <div className='flex flex-col gap-4'>
+            <div className="flex flex-col gap-4">
               <div className="flex flex-col">
                 <label htmlFor="MJ" className="text-start">
                   Merk terhadap Jenis Kulit
                 </label>
-                <select className="w-full rounded-lg border-2 border-gray-400 p-2 mt-2" name="MJ" id="MJ">
+                <select
+                  className="mt-2 w-full rounded-lg border-2 border-gray-400 p-2"
+                  name="MJ"
+                  id="MJ"
+                >
                   <option value={1}>Equal Importance</option>
                   <option value={3}>Moderate Importance</option>
                   <option value={5}>Strong Importance</option>
@@ -156,7 +196,11 @@ const Register = () => {
                 <label htmlFor="SK" className="text-start">
                   Shade terhadap Ketahanan
                 </label>
-                <select className="w-full rounded-lg border-2 border-gray-400 p-2 mt-2" name="SK" id="SK">
+                <select
+                  className="mt-2 w-full rounded-lg border-2 border-gray-400 p-2"
+                  name="SK"
+                  id="SK"
+                >
                   <option value={1}>Equal Importance</option>
                   <option value={3}>Moderate Importance</option>
                   <option value={5}>Strong Importance</option>
@@ -168,7 +212,11 @@ const Register = () => {
                 <label htmlFor="SC" className="text-start">
                   Shade terhadap Coverage
                 </label>
-                <select className="w-full rounded-lg border-2 border-gray-400 p-2 mt-2" name="SC" id="SC">
+                <select
+                  className="mt-2 w-full rounded-lg border-2 border-gray-400 p-2"
+                  name="SC"
+                  id="SC"
+                >
                   <option value={1}>Equal Importance</option>
                   <option value={3}>Moderate Importance</option>
                   <option value={5}>Strong Importance</option>
@@ -180,7 +228,11 @@ const Register = () => {
                 <label htmlFor="SJ" className="text-start">
                   Shade terhadap Jenis Kulit
                 </label>
-                <select className="w-full rounded-lg border-2 border-gray-400 p-2 mt-2" name="SJ" id="SJ">
+                <select
+                  className="mt-2 w-full rounded-lg border-2 border-gray-400 p-2"
+                  name="SJ"
+                  id="SJ"
+                >
                   <option value={1}>Equal Importance</option>
                   <option value={3}>Moderate Importance</option>
                   <option value={5}>Strong Importance</option>
@@ -192,7 +244,11 @@ const Register = () => {
                 <label htmlFor="KC" className="text-start">
                   Ketahanan terhadap Coverage
                 </label>
-                <select className="w-full rounded-lg border-2 border-gray-400 p-2 mt-2" name="KC" id="KC">
+                <select
+                  className="mt-2 w-full rounded-lg border-2 border-gray-400 p-2"
+                  name="KC"
+                  id="KC"
+                >
                   <option value={1}>Equal Importance</option>
                   <option value={3}>Moderate Importance</option>
                   <option value={5}>Strong Importance</option>
@@ -204,7 +260,11 @@ const Register = () => {
                 <label htmlFor="KJ" className="text-start">
                   Ketahanan terhadap Jenis Kulit
                 </label>
-                <select className="w-full rounded-lg border-2 border-gray-400 p-2 mt-2" name="KJ" id="KJ">
+                <select
+                  className="mt-2 w-full rounded-lg border-2 border-gray-400 p-2"
+                  name="KJ"
+                  id="KJ"
+                >
                   <option value={1}>Equal Importance</option>
                   <option value={3}>Moderate Importance</option>
                   <option value={5}>Strong Importance</option>
@@ -216,7 +276,11 @@ const Register = () => {
                 <label htmlFor="CJ" className="text-start">
                   Coverage terhadap Jenis Kulit
                 </label>
-                <select className="w-full rounded-lg border-2 border-gray-400 p-2 mt-2" name="CJ" id="CJ">
+                <select
+                  className="mt-2 w-full rounded-lg border-2 border-gray-400 p-2"
+                  name="CJ"
+                  id="CJ"
+                >
                   <option value={1}>Equal Importance</option>
                   <option value={3}>Moderate Importance</option>
                   <option value={5}>Strong Importance</option>

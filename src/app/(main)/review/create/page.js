@@ -8,7 +8,7 @@ import Link from "next/link";
 const CreateReview = ({searchParams}) => {
   const initialValue = {
     review: "",
-    rating: 0,
+    rating: 1,
     alternatifId: parseInt(searchParams.id),
   };
 

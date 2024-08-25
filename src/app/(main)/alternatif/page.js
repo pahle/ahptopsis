@@ -3,6 +3,7 @@ import { Topsis } from '@/utils/calculation'
 import { Container } from '@/components/Container'
 import DeleteButton from './DeleteButton'
 import Link from 'next/link'
+import { cookies } from 'next/headers'
 
 const Alternatif = async () => {
   const topsis = await Topsis()
@@ -40,17 +41,21 @@ const Alternatif = async () => {
                     Detail
                   </Link>
                 </td>
-                <td className="relative whitespace-nowrap text-center text-sm font-medium">
-                  <Link
-                    href={`/alternatif/edit?id=${data[0]}`}
-                    className="text-indigo-600 hover:text-indigo-900"
-                  >
-                    Edit
-                  </Link>
-                </td>
-                <td>
-                  <DeleteButton id={data[0]} />
-                </td>
+                {cookies().get('session').value == 'admin' && (
+                  <>
+                    <td className="relative whitespace-nowrap text-center text-sm font-medium">
+                      <Link
+                        href={`/alternatif/edit?id=${data[0]}`}
+                        className="text-indigo-600 hover:text-indigo-900"
+                      >
+                        Edit
+                      </Link>
+                    </td>
+                    <td>
+                      <DeleteButton id={data[0]} />
+                    </td>
+                  </>
+                )}
               </tr>
             ))}
           </tbody>
@@ -74,12 +79,16 @@ const AlternatifPage = () => {
           <h1 className="text-center text-4xl font-bold leading-7 text-slate-900">
             Alternatif
           </h1>
-          <Link
-            className="text-xl font-semibold leading-7 text-pink-500 text-end"
-            href="/alternatif/create"
-          >
-            Tambah +
-          </Link>
+          <div className='w-full text-end'>
+          {cookies().get('session').value == 'admin' && (
+            <Link
+              href="/alternatif/create"
+              className="text-xl font-semibold leading-7 text-pink-500"
+            >
+              Tambah +
+            </Link>
+          )}
+          </div>
         </div>
       </Container>
       <div className="mt-12 divide-y divide-slate-100 lg:border-t lg:border-slate-100">

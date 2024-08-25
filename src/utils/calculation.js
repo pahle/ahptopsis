@@ -215,13 +215,6 @@ export const Topsis = async () => {
     });
   }
 
-  // const columnHarga =       [5, 5, 3, 1, 1, 3, 1, 1, 1, 3];
-  // const columnMerk =        [5, 5, 5, 3, 5, 5, 3, 3, 1, 5];
-  // const columnShade =       [1, 5, 1, 1, 3, 3, 5, 1, 1, 5];
-  // const columnKetahanan =   [5, 3, 3, 1, 3, 3, 3, 1, 5, 1];
-  // const columnCoverage =    [5, 5, 5, 5, 5, 5, 5, 3, 5, 5];
-  // const columnJenisKulit =  [5, 3, 5, 3, 5, 5, 5, 5, 5, 1];
-
   const tabelData = reshapeArray(convertData(alternatif));
 
   // console.log("Tabel Data:", tabelData);

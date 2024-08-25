@@ -36,10 +36,6 @@ const Kriteria = async () => {
           id="bobot"
           className="w-full rounded-lg border border-gray-400 p-2"
         >
-          <option value={1 / 9}>1/9 Extreme Unimportance</option>
-          <option value={1 / 8}>1/8 Extreme to Very Strong Unimportance</option>
-          <option value={1 / 7}>1/7 Very Strong Unimportance</option>
-          <option value={1 / 6}>1/6 Very Strong to Strong Unimportance</option>
           <option value={1 / 5}>1/5 Strong Unimportance</option>
           <option value={1 / 4}>1/4 Strong to Moderate Unimportance</option>
           <option value={1 / 3}>1/3 Moderate Unimportance</option>
@@ -49,10 +45,6 @@ const Kriteria = async () => {
           <option value={3}>3 Moderate Importance</option>
           <option value={4}>4 Moderate to Strong Importance </option>
           <option value={5}>5 Strong Importance</option>
-          <option value={6}>6 Strong to Very Strong Importance</option>
-          <option value={7}>7 Very Strong Importance</option>
-          <option value={8}>8 Very Strong to Extreme Importance</option>
-          <option value={9}>9 Extreme Importance</option>
         </select>
         <button
           type="submit"
