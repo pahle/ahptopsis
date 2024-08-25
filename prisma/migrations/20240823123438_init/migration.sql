@@ -1,0 +1,58 @@
+-- CreateTable
+CREATE TABLE `User` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `username` VARCHAR(191) NOT NULL,
+    `password` VARCHAR(191) NOT NULL,
+    `HM` DOUBLE NOT NULL,
+    `HS` DOUBLE NOT NULL,
+    `HK` DOUBLE NOT NULL,
+    `HC` DOUBLE NOT NULL,
+    `HJ` DOUBLE NOT NULL,
+    `MS` DOUBLE NOT NULL,
+    `MK` DOUBLE NOT NULL,
+    `MC` DOUBLE NOT NULL,
+    `MJ` DOUBLE NOT NULL,
+    `SK` DOUBLE NOT NULL,
+    `SC` DOUBLE NOT NULL,
+    `SJ` DOUBLE NOT NULL,
+    `KC` DOUBLE NOT NULL,
+    `KJ` DOUBLE NOT NULL,
+    `CJ` DOUBLE NOT NULL,
+    `role` VARCHAR(191) NOT NULL DEFAULT 'user',
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME(3) NOT NULL,
+
+    UNIQUE INDEX `User_username_key`(`username`),
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `Alternatif` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(191) NOT NULL,
+    `harga` INTEGER NOT NULL,
+    `merk` VARCHAR(191) NOT NULL,
+    `shade` INTEGER NOT NULL,
+    `ketahanan` INTEGER NOT NULL,
+    `coverage` VARCHAR(191) NOT NULL,
+    `jenisKulit` VARCHAR(191) NOT NULL,
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME(3) NOT NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `Review` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `review` VARCHAR(191) NOT NULL,
+    `rating` INTEGER NOT NULL,
+    `alternatifId` INTEGER NOT NULL,
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME(3) NOT NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- AddForeignKey
+ALTER TABLE `Review` ADD CONSTRAINT `Review_alternatifId_fkey` FOREIGN KEY (`alternatifId`) REFERENCES `Alternatif`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
