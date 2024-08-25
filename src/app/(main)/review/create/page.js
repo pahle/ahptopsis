@@ -23,7 +23,6 @@ const CreateReview = ({searchParams}) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(form);
     await createReview(form);
     setForm(initialValue);
     history.back();

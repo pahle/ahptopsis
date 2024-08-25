@@ -80,7 +80,7 @@ export const AHP = async () => {
       return column.map((column) => {
         return parseFloat(
           (column / jumlahBobot[index])
-            .toFixed(2)
+            .toFixed(4)
             .replace(/\.?0+$/, "")
         );
       });
@@ -163,9 +163,9 @@ export const AHP = async () => {
   return {
     tabel: tabelPerbandingan,
     jumlahBobot: jumlahBobot,
-    normalisasi: normalisasi,
+    normalisasi: reshapeArray(normalisasi),
     bobotPrioritas: bobotPrioritas,
-    consistency: consistency,
+    consistency: reshapeArray(consistency),
     sumConsistency: sumConsistency,
     consistencyMeasures: consistencyMeasures,
     lambdaMax: lambdaMax,
@@ -197,7 +197,7 @@ export const Topsis = async () => {
     // console.log(jsonData)
     return jsonData.map(item => {
       // console.log(item.harga)
-      const harga = item.harga < 100000 ? 5 : item.harga >= 100000 && item.harga <= 150000 ? 3 : 1;
+      const harga = item.harga < 100000 ? 1 : item.harga >= 100000 && item.harga <= 150000 ? 3 : 5;
       const merk = item.merk === 'Kurang terkenal' ? 1 : item.merk === 'Cukup terkenal' ? 3 : 5;
       const shade = item.shade >= 3 && item.shade <= 7 ? 1 : item.shade >= 8 && item.shade <= 10 ? 3 : 5;
       const ketahanan = item.ketahanan >= 1 && item.ketahanan <= 4 ? 1 : item.ketahanan > 4 && item.ketahanan <= 8 ? 3 : 5;
@@ -241,7 +241,7 @@ export const Topsis = async () => {
       return column.map((column) => {
         return parseFloat(
           (column / denominator[index])
-            .toFixed(2)
+            .toFixed(4)
             .replace(/\.?0+$/, "")
         );
       });
@@ -256,7 +256,7 @@ export const Topsis = async () => {
         return parseFloat(
           (column * ahp.bobotPrioritas[index])
             .toFixed(4)
-            .replace(/\.?0+$/, "")
+            .replace(/\.?0+$/, ""),
         );
       });
     }
@@ -264,14 +264,22 @@ export const Topsis = async () => {
 
   // console.log("Normalisasi Bobot:", normalisasiBobot);
 
-  const idealPositif = normalisasiBobot.map((column) => {
-    return Math.max(...column);
+  const idealPositif = normalisasiBobot.map((column, index) => {
+    if (index === 0) {
+      return Math.min(...column);
+    } else {
+      return Math.max(...column);
+    }
   });
 
   // console.log("Ideal Positif:", idealPositif);
 
-  const idealNegatif = normalisasiBobot.map((column) => {
-    return Math.min(...column);
+  const idealNegatif = normalisasiBobot.map((column, index) => {
+    if (index === 0) {
+      return Math.max(...column);
+    } else {
+      return Math.min(...column);
+    }
   });
 
   // console.log("Ideal Negatif:", idealNegatif);
@@ -341,12 +349,14 @@ export const Topsis = async () => {
   return {
     tabelDataAwal: tabelDataAwal,
     tabelData: reshapeArray(tabelData),
-    normalisasiTopsis: normalisasiTopsis,
-    normalisasiBobot: normalisasiBobot,
+    denominator: denominator,
+    normalisasiTopsis: reshapeArray(normalisasiTopsis),
+    normalisasiBobot: reshapeArray(normalisasiBobot),
     idealPositif: idealPositif,
     idealNegatif: idealNegatif,
     distancePositif: distancePositif,
     distanceNegatif: distanceNegatif,
+    distance : distanceNegatif.map((value, index) => value + distancePositif[index]),
     performanceScore: performanceScore,
     ranking: ranking,
   };

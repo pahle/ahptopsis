@@ -117,10 +117,10 @@ const Kriteria = async () => {
             <h2>Hasil</h2>
 
             {ahp.konsisten ? (
-              <p className="text-green-500">Konsisten karena CR {'<'} 0.1</p>
+              <p className="text-green-500">Konsisten</p>
             ) : (
               <p className="text-red-500">
-                Tidak Konsisten karena CR {'>'} 0.1
+                Tidak Konsisten
               </p>
             )}
           </div>
