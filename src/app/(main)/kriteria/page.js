@@ -7,8 +7,6 @@ import Link from 'next/link'
 const Kriteria = async () => {
   const ahp = await AHP()
 
-  // console.log(ahp.tabel)
-
   return (
     <div className="flex w-full flex-col items-center">
       <form action={editKriteria} className="mt-12 flex w-full gap-4">
@@ -60,20 +58,9 @@ const Kriteria = async () => {
         <table className="w-full text-center [&>*>*>*]:border-2 [&>*>*>*]:p-4">
           <thead>
             <tr>
-            <th>Kriteria</th>
+              <th>Kriteria</th>
               {ahp.tabel.map((item, index) => (
-                <th key={index}>
-                  {
-                    [
-                      'Harga',
-                      'Merk',
-                      'Shade',
-                      'Ketahanan',
-                      'Coverage',
-                      'Jenis Kulit',
-                    ][index]
-                  }
-                </th>
+                <th key={index}>{ahp.kriteria[index]}</th>
               ))}
             </tr>
           </thead>

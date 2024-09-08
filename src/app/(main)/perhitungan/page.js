@@ -18,36 +18,14 @@ const Perhitungan = async () => {
             <tr>
               <th>Kriteria</th>
               {ahp.tabel.map((item, index) => (
-                <th key={index}>
-                  {
-                    [
-                      'Harga',
-                      'Merk',
-                      'Shade',
-                      'Ketahanan',
-                      'Coverage',
-                      'Jenis Kulit',
-                    ][index]
-                  }
-                </th>
+                <th key={index}>{ahp.kriteria[index]}</th>
               ))}
             </tr>
           </thead>
           <tbody>
             {ahp.tabel.map((row, index) => (
               <tr key={index}>
-                <td>
-                  {
-                    [
-                      'Harga',
-                      'Merk',
-                      'Shade',
-                      'Ketahanan',
-                      'Coverage',
-                      'Jenis Kulit',
-                    ][index]
-                  }
-                </td>
+                <td>{ahp.kriteria[index]}</td>
                 {row.map((column, index) => (
                   <td key={index}>{column.toFixed(4).replace(/\.?0+$/, '')}</td>
                 ))}
@@ -69,18 +47,7 @@ const Perhitungan = async () => {
             <tr>
               <th>Kriteria</th>
               {ahp.tabel.map((item, index) => (
-                <th key={index}>
-                  {
-                    [
-                      'Harga',
-                      'Merk',
-                      'Shade',
-                      'Ketahanan',
-                      'Coverage',
-                      'Jenis Kulit',
-                    ][index]
-                  }
-                </th>
+                <th key={index}>{ahp.kriteria[index]}</th>
               ))}
               <th className="bg-slate-300">Bobot Prioritas</th>
             </tr>
@@ -88,18 +55,7 @@ const Perhitungan = async () => {
           <tbody>
             {ahp.normalisasi.map((row, index) => (
               <tr key={index}>
-                <td>
-                  {
-                    [
-                      'Harga',
-                      'Merk',
-                      'Shade',
-                      'Ketahanan',
-                      'Coverage',
-                      'Jenis Kulit',
-                    ][index]
-                  }
-                </td>
+                <td>{ahp.kriteria[index]}</td>
                 {row.map((column, index) => (
                   <td key={index}>{column.toFixed(4).replace(/\.?0+$/, '')}</td>
                 ))}
@@ -120,18 +76,7 @@ const Perhitungan = async () => {
             <tr>
               <th>Kriteria</th>
               {ahp.tabel.map((item, index) => (
-                <th key={index}>
-                  {
-                    [
-                      'Harga',
-                      'Merk',
-                      'Shade',
-                      'Ketahanan',
-                      'Coverage',
-                      'Jenis Kulit',
-                    ][index]
-                  }
-                </th>
+                <th key={index}>{ahp.kriteria[index]}</th>
               ))}
               <th className="bg-slate-300">Sum</th>
               <th className="bg-slate-300">Bobot Prioritas</th>
@@ -143,14 +88,7 @@ const Perhitungan = async () => {
               <tr key={index}>
                 <td>
                   {
-                    [
-                      'Harga',
-                      'Merk',
-                      'Shade',
-                      'Ketahanan',
-                      'Coverage',
-                      'Jenis Kulit',
-                    ][index]
+                    ahp.kriteria[index]
                   }
                 </td>
                 {row.map((column, index) => (
@@ -293,12 +231,9 @@ const Perhitungan = async () => {
           <thead>
             <tr>
               <th>Alternatif</th>
-              <th>Harga</th>
-              <th>Merk</th>
-              <th>Shade</th>
-              <th>Ketahanan</th>
-              <th>Coverage</th>
-              <th>Jenis Kulit</th>
+              {ahp.tabel.map((item, index) => (
+                <th key={index}>{ahp.kriteria[index]}</th>
+              ))}
             </tr>
           </thead>
           <tbody>
@@ -333,12 +268,9 @@ const Perhitungan = async () => {
             </tr>
             <tr>
               <th>Alternatif</th>
-              <th>Harga</th>
-              <th>Merk</th>
-              <th>Shade</th>
-              <th>Ketahanan</th>
-              <th>Coverage</th>
-              <th>Jenis Kulit</th>
+              {ahp.tabel.map((item, index) => (
+                <th key={index}>{ahp.kriteria[index]}</th>
+              ))}
             </tr>
           </thead>
           <tbody>
@@ -361,12 +293,9 @@ const Perhitungan = async () => {
           <thead>
             <tr>
               <th>Alternatif</th>
-              <th>Harga</th>
-              <th>Merk</th>
-              <th>Shade</th>
-              <th>Ketahanan</th>
-              <th>Coverage</th>
-              <th>Jenis Kulit</th>
+              {ahp.tabel.map((item, index) => (
+                <th key={index}>{ahp.kriteria[index]}</th>
+              ))}
             </tr>
           </thead>
           <tbody>

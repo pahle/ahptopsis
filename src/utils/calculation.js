@@ -7,7 +7,22 @@ const reshapeArray = (array) => {
 export const AHP = async () => {
   const kriteria = await dataKriteria()
 
-  const filteredKriteria = ['H', 'M', 'S', "K"]
+  const filteredKriteria = ['H', 'S', 'K', 'C', 'J']
+
+  const kriteriaNames = {
+    H: 'Harga',
+    M: 'Merk',
+    S: 'Shade',
+    K: 'Ketahanan',
+    C: 'Coverage',
+    J: 'Jenis Kulit',
+  }
+
+  const filteredKriteriaNames = filteredKriteria.map((kriteria) => {
+    return kriteriaNames[kriteria]
+  })
+
+  console.log(filteredKriteriaNames)
 
   const kombinasiKriteria = []
   for (let i = 0; i < filteredKriteria.length; i++) {
@@ -158,6 +173,7 @@ export const AHP = async () => {
 
   // CR < 10 % = konsisten
   return {
+    kriteria: filteredKriteriaNames,
     tabel: tabelPerbandingan,
     jumlahBobot: jumlahBobot,
     normalisasi: reshapeArray(normalisasi),
@@ -175,10 +191,13 @@ export const AHP = async () => {
 // BATAS
 
 export const Topsis = async () => {
+  // Ambil hasil dari AHP yang sudah dihitung secara dinamis
   const ahp = await AHP()
 
+  // Ambil data alternatif
   const alternatif = await dataAlternatif()
 
+  // Ubah data alternatif menjadi tabel awal
   const tabelDataAwal = alternatif.map(
     ({ id, name, harga, merk, shade, ketahanan, coverage, jenisKulit }) => [
       id,
@@ -192,10 +211,9 @@ export const Topsis = async () => {
     ],
   )
 
+  // Konversi data berdasarkan aturan yang ditentukan
   function convertData(jsonData) {
-    // console.log(jsonData)
     return jsonData.map((item) => {
-      // console.log(item.harga)
       const harga =
         item.harga < 100000
           ? 1
@@ -227,22 +245,25 @@ export const Topsis = async () => {
           ? 3
           : 1
 
-      return [harga, merk, shade, ketahanan, coverage, jenisKulit]
+      // Hanya return kolom yang sesuai dengan filteredKriteria
+      return [harga, merk, shade, ketahanan, coverage, jenisKulit].slice(
+        0,
+        ahp.bobotPrioritas.length,
+      )
     })
   }
 
+  // Normalisasi tabel data dan reshape sesuai dengan jumlah kriteria dinamis
   const tabelData = reshapeArray(convertData(alternatif))
 
-  // console.log("Tabel Data:", tabelData);
-
+  // Hitung denominator (akar dari jumlah kuadrat kolom)
   const denominator = tabelData.map((column) => {
     return parseFloat(
       Math.sqrt(column.reduce((a, b) => a + b ** 2, 0)).toFixed(4),
     )
   })
 
-  // console.log("Denominator:", denominator);
-
+  // Normalisasi tabel TOPSIS
   const normalisasiTopsis = tabelData.map((column, index) => {
     return column.map((column) => {
       return parseFloat(
@@ -251,8 +272,7 @@ export const Topsis = async () => {
     })
   })
 
-  // console.log("Normalisasi:", normalisasiTopsis);
-
+  // Pemberian bobot normalisasi berdasarkan bobot dari AHP
   const normalisasiBobot = normalisasiTopsis.map((column, index) => {
     return column.map((column) => {
       return parseFloat(
@@ -261,34 +281,17 @@ export const Topsis = async () => {
     })
   })
 
-  // console.log("Normalisasi Bobot:", normalisasiBobot);
-
+  // Hitung nilai ideal positif dan negatif
   const idealPositif = normalisasiBobot.map((column, index) => {
-    if (index === 0) {
-      return Math.min(...column)
-    } else {
-      return Math.max(...column)
-    }
+    return index === 0 ? Math.min(...column) : Math.max(...column)
   })
-
-  // console.log("Ideal Positif:", idealPositif);
 
   const idealNegatif = normalisasiBobot.map((column, index) => {
-    if (index === 0) {
-      return Math.max(...column)
-    } else {
-      return Math.min(...column)
-    }
+    return index === 0 ? Math.max(...column) : Math.min(...column)
   })
 
-  // console.log("Ideal Negatif:", idealNegatif);
-
+  // Menghitung jarak ke solusi ideal positif dan negatif
   const reshapeNormalisasiBobot = reshapeArray(normalisasiBobot)
-
-  // console.log(
-  //   "Reshape Normalisasi Bobot:",
-  //   reshapeNormalisasiBobot
-  // );
 
   const distancePositif = reshapeNormalisasiBobot.map((row) => {
     return Math.sqrt(
@@ -298,8 +301,6 @@ export const Topsis = async () => {
     )
   })
 
-  // console.log("Distance Positif:", distancePositif);
-
   const distanceNegatif = reshapeNormalisasiBobot.map((row) => {
     return Math.sqrt(
       row
@@ -308,8 +309,7 @@ export const Topsis = async () => {
     )
   })
 
-  // console.log("Distance Negatif:", distanceNegatif);
-
+  // Menghitung skor kinerja
   const performanceScore = distanceNegatif.map((column, index) => {
     return parseFloat(
       (column / (column + distancePositif[index]))
@@ -318,8 +318,7 @@ export const Topsis = async () => {
     )
   })
 
-  // console.log("Performance Score:", performanceScore);
-
+  // Ranking hasil berdasarkan skor kinerja
   const ranking = performanceScore
     .map((value, index) => {
       return {
@@ -329,7 +328,6 @@ export const Topsis = async () => {
     })
     .sort((a, b) => b.score - a.score)
 
-  // console.log("Ranking:", ranking);
   return {
     tabelDataAwal: tabelDataAwal,
     tabelData: reshapeArray(tabelData),
