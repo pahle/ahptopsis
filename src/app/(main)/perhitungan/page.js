@@ -17,12 +17,20 @@ const Perhitungan = async () => {
           <thead>
             <tr>
               <th>Kriteria</th>
-              <th>Harga</th>
-              <th>Merk</th>
-              <th>Shade</th>
-              <th>Ketahanan</th>
-              <th>Coverage</th>
-              <th>Jenis Kulit</th>
+              {ahp.tabel.map((item, index) => (
+                <th key={index}>
+                  {
+                    [
+                      'Harga',
+                      'Merk',
+                      'Shade',
+                      'Ketahanan',
+                      'Coverage',
+                      'Jenis Kulit',
+                    ][index]
+                  }
+                </th>
+              ))}
             </tr>
           </thead>
           <tbody>
@@ -60,12 +68,20 @@ const Perhitungan = async () => {
           <thead>
             <tr>
               <th>Kriteria</th>
-              <th>Harga</th>
-              <th>Merk</th>
-              <th>Shade</th>
-              <th>Ketahanan</th>
-              <th>Coverage</th>
-              <th>Jenis Kulit</th>
+              {ahp.tabel.map((item, index) => (
+                <th key={index}>
+                  {
+                    [
+                      'Harga',
+                      'Merk',
+                      'Shade',
+                      'Ketahanan',
+                      'Coverage',
+                      'Jenis Kulit',
+                    ][index]
+                  }
+                </th>
+              ))}
               <th className="bg-slate-300">Bobot Prioritas</th>
             </tr>
           </thead>
@@ -103,12 +119,20 @@ const Perhitungan = async () => {
           <thead>
             <tr>
               <th>Kriteria</th>
-              <th>Harga</th>
-              <th>Merk</th>
-              <th>Shade</th>
-              <th>Ketahanan</th>
-              <th>Coverage</th>
-              <th>Jenis Kulit</th>
+              {ahp.tabel.map((item, index) => (
+                <th key={index}>
+                  {
+                    [
+                      'Harga',
+                      'Merk',
+                      'Shade',
+                      'Ketahanan',
+                      'Coverage',
+                      'Jenis Kulit',
+                    ][index]
+                  }
+                </th>
+              ))}
               <th className="bg-slate-300">Sum</th>
               <th className="bg-slate-300">Bobot Prioritas</th>
               <th className="bg-slate-300">Consistency Measures (Sum / BP)</th>
@@ -153,7 +177,7 @@ const Perhitungan = async () => {
         <div className="flex w-full justify-between gap-4">
           <div className="w-full rounded-lg border border-gray-400 px-3 py-2">
             <h2>Uji Konsistensi</h2>
-            <div className='flex items-center justify-center'>
+            <div className="flex items-center justify-center">
               <table>
                 <tbody>
                   <tr>
@@ -288,7 +312,7 @@ const Perhitungan = async () => {
                 ))}
               </tr>
             ))}
-            <tr className='bg-slate-300'>
+            <tr className="bg-slate-300">
               <td>Denominator</td>
               {topsis.denominator.map((column, index) => (
                 <td key={index}>{column.toFixed(4).replace(/\.?0+$/, '')}</td>
@@ -301,7 +325,7 @@ const Perhitungan = async () => {
         <h2 className="text-start">Normalisasi Alternatif</h2>
         <table className="w-full text-center [&>*>*>*]:border-2 [&>*>*>*]:p-4">
           <thead>
-            <tr className='bg-slate-300'>
+            <tr className="bg-slate-300">
               <th>Bobot Prioritas</th>
               {ahp.bobotPrioritas.map((bobot, index) => (
                 <th key={index}>{bobot.toFixed(4).replace(/\.?0+$/, '')}</th>
@@ -356,13 +380,13 @@ const Perhitungan = async () => {
                 ))}
               </tr>
             ))}
-            <tr className='bg-slate-300'>
+            <tr className="bg-slate-300">
               <td>Ideal Positif</td>
               {topsis.idealPositif.map((column, index) => (
                 <td key={index}>{column.toFixed(4).replace(/\.?0+$/, '')}</td>
               ))}
             </tr>
-            <tr className='bg-slate-300'>
+            <tr className="bg-slate-300">
               <td>Ideal Negatif</td>
               {topsis.idealNegatif.map((column, index) => (
                 <td key={index}>{column.toFixed(4).replace(/\.?0+$/, '')}</td>
