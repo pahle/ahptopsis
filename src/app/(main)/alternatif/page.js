@@ -41,21 +41,19 @@ const Alternatif = async () => {
                     Detail
                   </Link>
                 </td>
-                {cookies().get('session').value == 'admin' && (
-                  <>
-                    <td className="relative whitespace-nowrap text-center text-sm font-medium">
-                      <Link
-                        href={`/alternatif/edit?id=${data[0]}`}
-                        className="text-indigo-600 hover:text-indigo-900"
-                      >
-                        Edit
-                      </Link>
-                    </td>
-                    <td>
-                      <DeleteButton id={data[0]} />
-                    </td>
-                  </>
-                )}
+                <>
+                  <td className="relative whitespace-nowrap text-center text-sm font-medium">
+                    <Link
+                      href={`/alternatif/edit?id=${data[0]}`}
+                      className="text-indigo-600 hover:text-indigo-900"
+                    >
+                      Edit
+                    </Link>
+                  </td>
+                  <td>
+                    <DeleteButton id={data[0]} />
+                  </td>
+                </>
               </tr>
             ))}
           </tbody>
@@ -79,15 +77,13 @@ const AlternatifPage = () => {
           <h1 className="text-center text-4xl font-bold leading-7 text-slate-900">
             Alternatif
           </h1>
-          <div className='w-full text-end'>
-          {cookies().get('session').value == 'admin' && (
+          <div className="w-full text-end">
             <Link
               href="/alternatif/create"
               className="text-xl font-semibold leading-7 text-pink-500"
             >
               Tambah +
             </Link>
-          )}
           </div>
         </div>
       </Container>
