@@ -7,7 +7,7 @@ const reshapeArray = (array) => {
 export const AHP = async () => {
   const kriteria = await dataKriteria()
 
-  const filteredKriteria = ['H', 'S', 'K', 'C', 'J']
+  const filteredKriteria = kriteria.kriteria
 
   const kriteriaNames = {
     H: 'Harga',
@@ -21,8 +21,6 @@ export const AHP = async () => {
   const filteredKriteriaNames = filteredKriteria.map((kriteria) => {
     return kriteriaNames[kriteria]
   })
-
-  console.log(filteredKriteriaNames)
 
   const kombinasiKriteria = []
   for (let i = 0; i < filteredKriteria.length; i++) {

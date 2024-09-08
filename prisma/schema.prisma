@@ -32,6 +32,7 @@ model User {
   KC        Float
   KJ        Float
   CJ        Float
+  kriteria  Json     @default("[\"H\",\"M\",\"S\",\"K\",\"C\",\"J\"]")
   role      String   @default("user")
   reviews   Review[]
   createdAt DateTime @default(now())

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from '@/components/Container'
 import { AHP } from '@/utils/calculation'
-import { editKriteria } from '@/utils/query'
+import { editKriteria, editUserKriteria } from '@/utils/query'
 import Link from 'next/link'
 
 const Kriteria = async () => {
@@ -9,6 +9,53 @@ const Kriteria = async () => {
 
   return (
     <div className="flex w-full flex-col items-center">
+      <h2>Pilih kriteria yang ingin dipakai</h2>
+      <form action={editUserKriteria}>
+        <div className="flex items-center gap-4">
+          <div>
+            <label className="mr-2" htmlFor="H">
+              Harga
+            </label>
+            <input type="checkbox" name="H" id="H" />
+          </div>
+          <div>
+            <label className="mr-2" htmlFor="M">
+              Merk
+            </label>
+            <input type="checkbox" name="M" id="M" />
+          </div>
+          <div>
+            <label className="mr-2" htmlFor="S">
+              Shade
+            </label>
+            <input type="checkbox" name="S" id="S" />
+          </div>
+          <div>
+            <label className="mr-2" htmlFor="K">
+              Ketahanan
+            </label>
+            <input type="checkbox" name="K" id="K" />
+          </div>
+          <div>
+            <label className="mr-2" htmlFor="C">
+              Coverage
+            </label>
+            <input type="checkbox" name="C" id="C" />
+          </div>
+          <div>
+            <label className="mr-2" htmlFor="J">
+              Jenis Kulit
+            </label>
+            <input type="checkbox" name="J" id="J" />
+          </div>
+          <button
+            type="submit"
+            className="w-24 self-center rounded-lg border border-pink-500 p-2 text-sm font-bold leading-6 text-pink-500 hover:text-pink-700 active:text-pink-900"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
       <form action={editKriteria} className="mt-12 flex w-full gap-4">
         <select
           name="kriteria"
@@ -67,18 +114,7 @@ const Kriteria = async () => {
           <tbody>
             {ahp.tabel.map((row, index) => (
               <tr key={index}>
-                <td>
-                  {
-                    [
-                      'Harga',
-                      'Merk',
-                      'Shade',
-                      'Ketahanan',
-                      'Coverage',
-                      'Jenis Kulit',
-                    ][index]
-                  }
-                </td>
+                <td>{ahp.kriteria[index]}</td>
                 {row.map((column, index) => (
                   <td key={index}>{column.toFixed(4).replace(/\.?0+$/, '')}</td>
                 ))}

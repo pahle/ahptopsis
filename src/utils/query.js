@@ -4,6 +4,37 @@ import prisma from './prismaClient'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
+export const editUserKriteria = async (value) => {
+
+  const criteriaArray = []
+
+  if (value.get('H')) criteriaArray.push('H')
+  if (value.get('M')) criteriaArray.push('M')
+  if (value.get('S')) criteriaArray.push('S')
+  if (value.get('K')) criteriaArray.push('K')
+  if (value.get('C')) criteriaArray.push('C')
+  if (value.get('J')) criteriaArray.push('J')
+
+
+    try {
+      await prisma.user.update({
+        where: {
+          id: parseInt(cookies().get('id').value),
+        },
+        data: {
+          kriteria: criteriaArray,
+        },
+      })
+    } catch (error) {
+      console.error(error)
+    } finally {
+      prisma.$disconnect()
+    }
+
+    redirect('/kriteria')
+
+} 
+
 export const dataKriteria = async () => {
   try {
     const query = await prisma.user.findFirst({

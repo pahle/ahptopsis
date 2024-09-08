@@ -20,7 +20,7 @@ CREATE TABLE `User` (
     `CJ` DOUBLE NOT NULL,
     `role` VARCHAR(191) NOT NULL DEFAULT 'user',
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    `updatedAt` DATETIME(3) NOT NULL,
+    `updatedAt` DATETIME(3) NULL,
 
     UNIQUE INDEX `User_username_key`(`username`),
     PRIMARY KEY (`id`)
@@ -37,7 +37,7 @@ CREATE TABLE `Alternatif` (
     `coverage` VARCHAR(191) NOT NULL,
     `jenisKulit` VARCHAR(191) NOT NULL,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    `updatedAt` DATETIME(3) NOT NULL,
+    `updatedAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -48,6 +48,7 @@ CREATE TABLE `Review` (
     `review` VARCHAR(191) NOT NULL,
     `rating` INTEGER NOT NULL,
     `alternatifId` INTEGER NOT NULL,
+    `userId` INTEGER NOT NULL,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updatedAt` DATETIME(3) NOT NULL,
 
@@ -56,3 +57,6 @@ CREATE TABLE `Review` (
 
 -- AddForeignKey
 ALTER TABLE `Review` ADD CONSTRAINT `Review_alternatifId_fkey` FOREIGN KEY (`alternatifId`) REFERENCES `Alternatif`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `Review` ADD CONSTRAINT `Review_userId_fkey` FOREIGN KEY (`userId`) REFERENCES `User`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;

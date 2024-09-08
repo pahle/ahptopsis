@@ -71,11 +71,19 @@ const Register = () => {
                   name="HS"
                   id="HS"
                 >
-                  <option value={1}>Equal Importance</option>
-                  <option value={3}>Moderate Importance</option>
-                  <option value={5}>Strong Importance</option>
-                  <option value={7}>Very Strong Importance</option>
-                  <option value={9}>Extreme Importance</option>
+                  <option value={1 / 5}>1/5 Strong Unimportance</option>
+                  <option value={1 / 4}>
+                    1/4 Strong to Moderate Unimportance
+                  </option>
+                  <option value={1 / 3}>1/3 Moderate Unimportance</option>
+                  <option value={1 / 2}>
+                    1/2 Moderate to Low Unimportance
+                  </option>
+                  <option value={1}>1 Equal Importance</option>
+                  <option value={2}>2 Equal to Moderate Importance</option>
+                  <option value={3}>3 Moderate Importance</option>
+                  <option value={4}>4 Moderate to Strong Importance </option>
+                  <option value={5}>5 Strong Importance</option>
                 </select>
               </div>
               <div className="flex flex-col">
@@ -87,11 +95,19 @@ const Register = () => {
                   name="HK"
                   id="HK"
                 >
-                  <option value={1}>Equal Importance</option>
-                  <option value={3}>Moderate Importance</option>
-                  <option value={5}>Strong Importance</option>
-                  <option value={7}>Very Strong Importance</option>
-                  <option value={9}>Extreme Importance</option>
+                  <option value={1 / 5}>1/5 Strong Unimportance</option>
+                  <option value={1 / 4}>
+                    1/4 Strong to Moderate Unimportance
+                  </option>
+                  <option value={1 / 3}>1/3 Moderate Unimportance</option>
+                  <option value={1 / 2}>
+                    1/2 Moderate to Low Unimportance
+                  </option>
+                  <option value={1}>1 Equal Importance</option>
+                  <option value={2}>2 Equal to Moderate Importance</option>
+                  <option value={3}>3 Moderate Importance</option>
+                  <option value={4}>4 Moderate to Strong Importance </option>
+                  <option value={5}>5 Strong Importance</option>
                 </select>
               </div>
               <div className="flex flex-col">
@@ -103,11 +119,19 @@ const Register = () => {
                   name="HC"
                   id="HC"
                 >
-                  <option value={1}>Equal Importance</option>
-                  <option value={3}>Moderate Importance</option>
-                  <option value={5}>Strong Importance</option>
-                  <option value={7}>Very Strong Importance</option>
-                  <option value={9}>Extreme Importance</option>
+                  <option value={1 / 5}>1/5 Strong Unimportance</option>
+                  <option value={1 / 4}>
+                    1/4 Strong to Moderate Unimportance
+                  </option>
+                  <option value={1 / 3}>1/3 Moderate Unimportance</option>
+                  <option value={1 / 2}>
+                    1/2 Moderate to Low Unimportance
+                  </option>
+                  <option value={1}>1 Equal Importance</option>
+                  <option value={2}>2 Equal to Moderate Importance</option>
+                  <option value={3}>3 Moderate Importance</option>
+                  <option value={4}>4 Moderate to Strong Importance </option>
+                  <option value={5}>5 Strong Importance</option>
                 </select>
               </div>
               <div className="flex flex-col">
@@ -119,11 +143,19 @@ const Register = () => {
                   name="HJ"
                   id="HJ"
                 >
-                  <option value={1}>Equal Importance</option>
-                  <option value={3}>Moderate Importance</option>
-                  <option value={5}>Strong Importance</option>
-                  <option value={7}>Very Strong Importance</option>
-                  <option value={9}>Extreme Importance</option>
+                  <option value={1 / 5}>1/5 Strong Unimportance</option>
+                  <option value={1 / 4}>
+                    1/4 Strong to Moderate Unimportance
+                  </option>
+                  <option value={1 / 3}>1/3 Moderate Unimportance</option>
+                  <option value={1 / 2}>
+                    1/2 Moderate to Low Unimportance
+                  </option>
+                  <option value={1}>1 Equal Importance</option>
+                  <option value={2}>2 Equal to Moderate Importance</option>
+                  <option value={3}>3 Moderate Importance</option>
+                  <option value={4}>4 Moderate to Strong Importance </option>
+                  <option value={5}>5 Strong Importance</option>
                 </select>
               </div>
               <div className="flex flex-col">
@@ -135,11 +167,19 @@ const Register = () => {
                   name="MS"
                   id="MS"
                 >
-                  <option value={1}>Equal Importance</option>
-                  <option value={3}>Moderate Importance</option>
-                  <option value={5}>Strong Importance</option>
-                  <option value={7}>Very Strong Importance</option>
-                  <option value={9}>Extreme Importance</option>
+                  <option value={1 / 5}>1/5 Strong Unimportance</option>
+                  <option value={1 / 4}>
+                    1/4 Strong to Moderate Unimportance
+                  </option>
+                  <option value={1 / 3}>1/3 Moderate Unimportance</option>
+                  <option value={1 / 2}>
+                    1/2 Moderate to Low Unimportance
+                  </option>
+                  <option value={1}>1 Equal Importance</option>
+                  <option value={2}>2 Equal to Moderate Importance</option>
+                  <option value={3}>3 Moderate Importance</option>
+                  <option value={4}>4 Moderate to Strong Importance </option>
+                  <option value={5}>5 Strong Importance</option>
                 </select>
               </div>
               <div className="flex flex-col">
@@ -151,11 +191,19 @@ const Register = () => {
                   name="MK"
                   id="MK"
                 >
-                  <option value={1}>Equal Importance</option>
-                  <option value={3}>Moderate Importance</option>
-                  <option value={5}>Strong Importance</option>
-                  <option value={7}>Very Strong Importance</option>
-                  <option value={9}>Extreme Importance</option>
+                  <option value={1 / 5}>1/5 Strong Unimportance</option>
+                  <option value={1 / 4}>
+                    1/4 Strong to Moderate Unimportance
+                  </option>
+                  <option value={1 / 3}>1/3 Moderate Unimportance</option>
+                  <option value={1 / 2}>
+                    1/2 Moderate to Low Unimportance
+                  </option>
+                  <option value={1}>1 Equal Importance</option>
+                  <option value={2}>2 Equal to Moderate Importance</option>
+                  <option value={3}>3 Moderate Importance</option>
+                  <option value={4}>4 Moderate to Strong Importance </option>
+                  <option value={5}>5 Strong Importance</option>
                 </select>
               </div>
               <div className="flex flex-col">
@@ -167,11 +215,19 @@ const Register = () => {
                   name="MC"
                   id="MC"
                 >
-                  <option value={1}>Equal Importance</option>
-                  <option value={3}>Moderate Importance</option>
-                  <option value={5}>Strong Importance</option>
-                  <option value={7}>Very Strong Importance</option>
-                  <option value={9}>Extreme Importance</option>
+                  <option value={1 / 5}>1/5 Strong Unimportance</option>
+                  <option value={1 / 4}>
+                    1/4 Strong to Moderate Unimportance
+                  </option>
+                  <option value={1 / 3}>1/3 Moderate Unimportance</option>
+                  <option value={1 / 2}>
+                    1/2 Moderate to Low Unimportance
+                  </option>
+                  <option value={1}>1 Equal Importance</option>
+                  <option value={2}>2 Equal to Moderate Importance</option>
+                  <option value={3}>3 Moderate Importance</option>
+                  <option value={4}>4 Moderate to Strong Importance </option>
+                  <option value={5}>5 Strong Importance</option>
                 </select>
               </div>
             </div>
@@ -185,11 +241,19 @@ const Register = () => {
                   name="MJ"
                   id="MJ"
                 >
-                  <option value={1}>Equal Importance</option>
-                  <option value={3}>Moderate Importance</option>
-                  <option value={5}>Strong Importance</option>
-                  <option value={7}>Very Strong Importance</option>
-                  <option value={9}>Extreme Importance</option>
+                  <option value={1 / 5}>1/5 Strong Unimportance</option>
+                  <option value={1 / 4}>
+                    1/4 Strong to Moderate Unimportance
+                  </option>
+                  <option value={1 / 3}>1/3 Moderate Unimportance</option>
+                  <option value={1 / 2}>
+                    1/2 Moderate to Low Unimportance
+                  </option>
+                  <option value={1}>1 Equal Importance</option>
+                  <option value={2}>2 Equal to Moderate Importance</option>
+                  <option value={3}>3 Moderate Importance</option>
+                  <option value={4}>4 Moderate to Strong Importance </option>
+                  <option value={5}>5 Strong Importance</option>
                 </select>
               </div>
               <div className="flex flex-col">
@@ -201,11 +265,19 @@ const Register = () => {
                   name="SK"
                   id="SK"
                 >
-                  <option value={1}>Equal Importance</option>
-                  <option value={3}>Moderate Importance</option>
-                  <option value={5}>Strong Importance</option>
-                  <option value={7}>Very Strong Importance</option>
-                  <option value={9}>Extreme Importance</option>
+                  <option value={1 / 5}>1/5 Strong Unimportance</option>
+                  <option value={1 / 4}>
+                    1/4 Strong to Moderate Unimportance
+                  </option>
+                  <option value={1 / 3}>1/3 Moderate Unimportance</option>
+                  <option value={1 / 2}>
+                    1/2 Moderate to Low Unimportance
+                  </option>
+                  <option value={1}>1 Equal Importance</option>
+                  <option value={2}>2 Equal to Moderate Importance</option>
+                  <option value={3}>3 Moderate Importance</option>
+                  <option value={4}>4 Moderate to Strong Importance </option>
+                  <option value={5}>5 Strong Importance</option>
                 </select>
               </div>
               <div className="flex flex-col">
@@ -217,11 +289,19 @@ const Register = () => {
                   name="SC"
                   id="SC"
                 >
-                  <option value={1}>Equal Importance</option>
-                  <option value={3}>Moderate Importance</option>
-                  <option value={5}>Strong Importance</option>
-                  <option value={7}>Very Strong Importance</option>
-                  <option value={9}>Extreme Importance</option>
+                  <option value={1 / 5}>1/5 Strong Unimportance</option>
+                  <option value={1 / 4}>
+                    1/4 Strong to Moderate Unimportance
+                  </option>
+                  <option value={1 / 3}>1/3 Moderate Unimportance</option>
+                  <option value={1 / 2}>
+                    1/2 Moderate to Low Unimportance
+                  </option>
+                  <option value={1}>1 Equal Importance</option>
+                  <option value={2}>2 Equal to Moderate Importance</option>
+                  <option value={3}>3 Moderate Importance</option>
+                  <option value={4}>4 Moderate to Strong Importance </option>
+                  <option value={5}>5 Strong Importance</option>
                 </select>
               </div>
               <div className="flex flex-col">
@@ -233,11 +313,19 @@ const Register = () => {
                   name="SJ"
                   id="SJ"
                 >
-                  <option value={1}>Equal Importance</option>
-                  <option value={3}>Moderate Importance</option>
-                  <option value={5}>Strong Importance</option>
-                  <option value={7}>Very Strong Importance</option>
-                  <option value={9}>Extreme Importance</option>
+                  <option value={1 / 5}>1/5 Strong Unimportance</option>
+                  <option value={1 / 4}>
+                    1/4 Strong to Moderate Unimportance
+                  </option>
+                  <option value={1 / 3}>1/3 Moderate Unimportance</option>
+                  <option value={1 / 2}>
+                    1/2 Moderate to Low Unimportance
+                  </option>
+                  <option value={1}>1 Equal Importance</option>
+                  <option value={2}>2 Equal to Moderate Importance</option>
+                  <option value={3}>3 Moderate Importance</option>
+                  <option value={4}>4 Moderate to Strong Importance </option>
+                  <option value={5}>5 Strong Importance</option>
                 </select>
               </div>
               <div className="flex flex-col">
@@ -249,11 +337,19 @@ const Register = () => {
                   name="KC"
                   id="KC"
                 >
-                  <option value={1}>Equal Importance</option>
-                  <option value={3}>Moderate Importance</option>
-                  <option value={5}>Strong Importance</option>
-                  <option value={7}>Very Strong Importance</option>
-                  <option value={9}>Extreme Importance</option>
+                  <option value={1 / 5}>1/5 Strong Unimportance</option>
+                  <option value={1 / 4}>
+                    1/4 Strong to Moderate Unimportance
+                  </option>
+                  <option value={1 / 3}>1/3 Moderate Unimportance</option>
+                  <option value={1 / 2}>
+                    1/2 Moderate to Low Unimportance
+                  </option>
+                  <option value={1}>1 Equal Importance</option>
+                  <option value={2}>2 Equal to Moderate Importance</option>
+                  <option value={3}>3 Moderate Importance</option>
+                  <option value={4}>4 Moderate to Strong Importance </option>
+                  <option value={5}>5 Strong Importance</option>
                 </select>
               </div>
               <div className="flex flex-col">
@@ -265,11 +361,19 @@ const Register = () => {
                   name="KJ"
                   id="KJ"
                 >
-                  <option value={1}>Equal Importance</option>
-                  <option value={3}>Moderate Importance</option>
-                  <option value={5}>Strong Importance</option>
-                  <option value={7}>Very Strong Importance</option>
-                  <option value={9}>Extreme Importance</option>
+                  <option value={1 / 5}>1/5 Strong Unimportance</option>
+                  <option value={1 / 4}>
+                    1/4 Strong to Moderate Unimportance
+                  </option>
+                  <option value={1 / 3}>1/3 Moderate Unimportance</option>
+                  <option value={1 / 2}>
+                    1/2 Moderate to Low Unimportance
+                  </option>
+                  <option value={1}>1 Equal Importance</option>
+                  <option value={2}>2 Equal to Moderate Importance</option>
+                  <option value={3}>3 Moderate Importance</option>
+                  <option value={4}>4 Moderate to Strong Importance </option>
+                  <option value={5}>5 Strong Importance</option>
                 </select>
               </div>
               <div className="flex flex-col">
@@ -281,11 +385,19 @@ const Register = () => {
                   name="CJ"
                   id="CJ"
                 >
-                  <option value={1}>Equal Importance</option>
-                  <option value={3}>Moderate Importance</option>
-                  <option value={5}>Strong Importance</option>
-                  <option value={7}>Very Strong Importance</option>
-                  <option value={9}>Extreme Importance</option>
+                  <option value={1 / 5}>1/5 Strong Unimportance</option>
+                  <option value={1 / 4}>
+                    1/4 Strong to Moderate Unimportance
+                  </option>
+                  <option value={1 / 3}>1/3 Moderate Unimportance</option>
+                  <option value={1 / 2}>
+                    1/2 Moderate to Low Unimportance
+                  </option>
+                  <option value={1}>1 Equal Importance</option>
+                  <option value={2}>2 Equal to Moderate Importance</option>
+                  <option value={3}>3 Moderate Importance</option>
+                  <option value={4}>4 Moderate to Strong Importance </option>
+                  <option value={5}>5 Strong Importance</option>
                 </select>
               </div>
             </div>
