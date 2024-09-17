@@ -25,10 +25,11 @@ export default function MainLayout({ children }) {
               >
                 AHP TOPSIS
               </Link>
-              <div className="flex gap-4">
+              <div className="flex items-center gap-4">
                 <Link href="/kriteria">Kriteria</Link>
                 <Link href="/alternatif">Alternatif</Link>
                 <Link href="/perhitungan">Perhitungan</Link>
+                <Link href="/uji-kriteria/harga">Uji Kriteria</Link>
                 <ButtonLogOut />
               </div>
             </div>
