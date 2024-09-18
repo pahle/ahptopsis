@@ -11,3 +11,12 @@ VALUES
 (8, 'True to Skin Skinlike Porefecting Cushion', 77000, 'Cukup terkenal', 6, 4, 'Perlu beberapa kali pengaplikasian', 'Semua jenis kulit'),
 (9, 'Goute Goucushion', 60000, 'Kurang terkenal', 3, 12, 'Cukup satu kali pengaplikasian', 'Semua jenis kulit'),
 (10, 'ESQA Flawless Cushion Serum', 148000, 'Terkenal', 10, 3, 'Cukup satu kali pengaplikasian', 'Dry');
+
+INSERT INTO user (username, password, HM, HS, HK, HC, HJ, MS, MK, MC, MJ, SK, SC, SJ, KC, KJ, CJ, kriteria, role) 
+VALUES (
+  'admin', 
+  'admin', 
+  0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 
+  '["H", "M", "S", "K", "C", "J"]', 
+  'admin'
+);

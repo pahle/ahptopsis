@@ -15,6 +15,14 @@ export const editUserKriteria = async (value) => {
   if (value.get('C')) criteriaArray.push('C')
   if (value.get('J')) criteriaArray.push('J')
 
+  if (value == []) {
+    return
+  }
+
+  if (criteriaArray.length < 1) {
+    return
+  }
+
 
     try {
       await prisma.user.update({

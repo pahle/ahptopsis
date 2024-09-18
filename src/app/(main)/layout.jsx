@@ -29,7 +29,11 @@ export default function MainLayout({ children }) {
                 <Link href="/kriteria">Kriteria</Link>
                 <Link href="/alternatif">Alternatif</Link>
                 <Link href="/perhitungan">Perhitungan</Link>
-                <Link href="/uji-kriteria/harga">Uji Kriteria</Link>
+                {
+                  cookies().get('role') === 'admin' ? (
+                    <Link href="/uji-kriteria/harga">Uji Kriteria</Link>
+                  ) : null
+                }
                 <ButtonLogOut />
               </div>
             </div>

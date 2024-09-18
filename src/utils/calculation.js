@@ -5,9 +5,9 @@ const reshapeArray = (array) => {
 }
 
 export const AHP = async () => {
-  const kriteria = await dataKriteria()
+  const kriteria = await dataKriteria() //Ambil data kriteria dari user
 
-  const filteredKriteria = kriteria.kriteria
+  const filteredKriteria = kriteria.kriteria //Ambil data kriteria yang dipilih user ["H", "M", ...]
 
   const kriteriaNames = {
     H: 'Harga',
@@ -16,18 +16,18 @@ export const AHP = async () => {
     K: 'Ketahanan',
     C: 'Coverage',
     J: 'Jenis Kulit',
-  }
+  } // Nama kriteria
 
   const filteredKriteriaNames = filteredKriteria.map((kriteria) => {
     return kriteriaNames[kriteria]
-  })
+  }) // Convert kode kriteria menjadi nama kriteria ["Harga", "Merk", ...]
 
   const kombinasiKriteria = []
   for (let i = 0; i < filteredKriteria.length; i++) {
     for (let j = i + 1; j < filteredKriteria.length; j++) {
       kombinasiKriteria.push(filteredKriteria[i] + filteredKriteria[j])
     }
-  }
+  } // Kombinasi kriteria yang akan dibandingkan ["HM", ...]
 
   // Inisialisasi tabel perbandingan secara dinamis
   const tabelPerbandingan = []
@@ -57,46 +57,11 @@ export const AHP = async () => {
     tabelPerbandingan.push(row) // Masukkan baris ke tabel
   }
 
-  // console.log(tabelPerbandingan)
-
-  // const tabelPerbandingan = [
-  //   [1, kriteria.HM, kriteria.HS, kriteria.HK, kriteria.HC, kriteria.HJ],
-  //   [1 / kriteria.HM, 1, kriteria.MS, kriteria.MK, kriteria.MC, kriteria.MJ],
-  //   [
-  //     1 / kriteria.HS,
-  //     1 / kriteria.MS,
-  //     1,
-  //     kriteria.SK,
-  //     kriteria.SC,
-  //     kriteria.SJ,
-  //   ],
-  //   [
-  //     1 / kriteria.HK,
-  //     1 / kriteria.MK,
-  //     1 / kriteria.SK,
-  //     1,
-  //     kriteria.KC,
-  //     kriteria.KJ,
-  //   ],
-  //   [
-  //     1 / kriteria.HC,
-  //     1 / kriteria.MC,
-  //     1 / kriteria.SC,
-  //     1 / kriteria.KC,
-  //     1,
-  //     kriteria.CJ,
-  //   ],
-  //   [
-  //     1 / kriteria.HJ,
-  //     1 / kriteria.MJ,
-  //     1 / kriteria.SJ,
-  //     1 / kriteria.KJ,
-  //     1 / kriteria.CJ,
-  //     1,
-  //   ],
-  // ]
+  console.log(tabelPerbandingan)
 
   const reshapedTabelPerbandingan = reshapeArray(tabelPerbandingan)
+
+  console.log(reshapedTabelPerbandingan)
 
   const jumlahBobot = reshapedTabelPerbandingan.map((column) => {
     return parseFloat(
