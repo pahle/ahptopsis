@@ -57,7 +57,7 @@ console.log(normalisasi)
 
 export const weight = reshapeNormalisasi.map((row, index) => {
   return row
-    .reduce((acc, val) => acc + val, 0)
+    .reduce((acc, val) => acc + val / 10, 0)
     .toFixed(4)
     .replace(/\.?0+$/, '')
 })
