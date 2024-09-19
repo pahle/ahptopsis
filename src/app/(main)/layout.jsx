@@ -30,7 +30,7 @@ export default function MainLayout({ children }) {
                 <Link href="/alternatif">Alternatif</Link>
                 <Link href="/perhitungan">Perhitungan</Link>
                 {
-                  cookies().get('role') === 'admin' ? (
+                  cookies().get('session').value == 'admin' ? (
                     <Link href="/uji-kriteria/harga">Uji Kriteria</Link>
                   ) : null
                 }
