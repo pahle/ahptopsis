@@ -5,9 +5,13 @@ const reshapeArray = (array) => {
 }
 
 export const AHP = async () => {
-  const kriteria = await dataKriteria() //Ambil data kriteria dari user
+  const user = await dataKriteria() //Ambil data user yang sedang login
 
-  const filteredKriteria = kriteria.kriteria //Ambil data kriteria yang dipilih user ["H", "M", ...]
+  console.log(user)
+
+  const filteredKriteria = user.kriteria //Ambil data kriteria yang dipilih user ["H", "M", ...]
+
+  console.log(filteredKriteria)
 
   const kriteriaNames = {
     H: 'Harga',
@@ -22,12 +26,16 @@ export const AHP = async () => {
     return kriteriaNames[kriteria]
   }) // Convert kode kriteria menjadi nama kriteria ["Harga", "Merk", ...]
 
+  console.log(filteredKriteriaNames)
+
   const kombinasiKriteria = []
   for (let i = 0; i < filteredKriteria.length; i++) {
     for (let j = i + 1; j < filteredKriteria.length; j++) {
       kombinasiKriteria.push(filteredKriteria[i] + filteredKriteria[j])
     }
   } // Kombinasi kriteria yang akan dibandingkan ["HM", ...]
+
+  console.log(kombinasiKriteria)
 
   // Inisialisasi tabel perbandingan secara dinamis
   const tabelPerbandingan = []
@@ -47,7 +55,7 @@ export const AHP = async () => {
             ? filteredKriteria[i] + filteredKriteria[j]
             : filteredKriteria[j] + filteredKriteria[i]
 
-        const value = kriteria[key] // Ambil nilai dari objek kriteria
+        const value = user[key] // Ambil nilai dari objek kriteria
 
         // Jika key ditemukan, masukkan nilai kriteria, jika tidak, masukkan 1/nilai yang sudah ada
         row.push(i < j ? value : 1 / value)
@@ -57,11 +65,11 @@ export const AHP = async () => {
     tabelPerbandingan.push(row) // Masukkan baris ke tabel
   }
 
-  console.log(tabelPerbandingan)
+  // console.log(tabelPerbandingan)
 
   const reshapedTabelPerbandingan = reshapeArray(tabelPerbandingan)
 
-  console.log(reshapedTabelPerbandingan)
+  // console.log(reshapedTabelPerbandingan)
 
   const jumlahBobot = reshapedTabelPerbandingan.map((column) => {
     return parseFloat(
@@ -130,7 +138,18 @@ export const AHP = async () => {
 
   // console.log(consistencyIndex);
 
-  const consistencyRatio = parseFloat((consistencyIndex / 1.24).toFixed(4))
+  const randomIndex = {
+    1: 0,
+    2: 0,
+    3: 0.58,
+    4: 0.9,
+    5: 1.12,
+    6: 1.24,
+  }
+
+  const consistencyRatio = parseFloat(
+    (consistencyIndex / randomIndex[filteredKriteria.length]).toFixed(4),
+  )
 
   // console.log(consistencyRatio);
 

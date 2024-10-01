@@ -159,7 +159,7 @@ const Perhitungan = async () => {
                     <td>RI</td>
                     <td>=</td>
                     <td className="text-start">
-                      Nilai Random Index 6 Kriteria
+                      Nilai Random Index
                     </td>
                   </tr>
                   <tr>
